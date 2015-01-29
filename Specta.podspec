@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
   s.name     = 'Specta'
-  s.version  = '0.3.0.beta1'
+  s.version  = '0.3.0.beta1-GAITrackerModelPatch'
   s.license  = 'MIT'
   s.summary  = 'A light-weight TDD / BDD framework for Objective-C & Cocoa.'
   s.homepage = 'http://github.com/specta/specta'
   s.author   = { 'Peter Jihoon Kim' => 'raingrove@gmail.com' }
 
-  s.source   = { :git => 'https://github.com/specta/specta.git', :tag => 'v0.3.0.beta1' }
+  s.source   = { :git => 'https://github.com/tombatesuk/specta.git', :tag => 'v0.3.0.beta1-GAITrackerModelPatch' }
 
   s.description = 'Specta is a light-weight testing framework for Objective-C and Cocoa that adds RSpec-like DSL to XCTest.'
 

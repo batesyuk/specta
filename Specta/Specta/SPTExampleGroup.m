@@ -9,26 +9,25 @@
 
 static NSArray *ClassesWithClassMethod(SEL classMethodSelector) {
   NSMutableArray *classesWithClassMethod = [[NSMutableArray alloc] init];
-
+  
   int numberOfClasses = objc_getClassList(NULL, 0);
   if (numberOfClasses > 0) {
     Class *classes = (Class *)malloc(sizeof(Class) *numberOfClasses);
     numberOfClasses = objc_getClassList(classes, numberOfClasses);
-
+    
     for(int classIndex = 0; classIndex < numberOfClasses; classIndex++) {
       Class aClass = classes[classIndex];
-
-      if (strcmp("UIAccessibilitySafeCategory__NSObject", class_getName(aClass))) {
+      if (strcmp("UIAccessibilitySafeCategory__NSObject", class_getName(aClass)) && strcmp("GAITrackerModel", class_getName(aClass)) != 0) {
         Method globalMethod = class_getClassMethod(aClass, classMethodSelector);
         if (globalMethod) {
           [classesWithClassMethod addObject:aClass];
         }
       }
     }
-
+    
     free(classes);
   }
-
+  
   return classesWithClassMethod;
 }
 
